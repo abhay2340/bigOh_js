@@ -38,9 +38,9 @@ function calculator() {
 }
 
 // Example usage:
-console.log(calculator('add', 9, 4, 12, 16, 23, 43));      // Output: 107
-console.log(calculator('subtract', 100, 20, 10));          // Output: 70
-console.log(calculator('multiply', 2, 3, 4));              // Output: 24
-console.log(calculator('divide', 100, 5, 2));              // Output: 10
-console.log(calculator('modulus', 10, 3, 2));              // Output: 1
-console.log(calculator('divide', 10, 0));                  // Output: Error: Division by zero is not allowed.
+console.log(calculator('add', 9, 4, 12, 16, 23, 43));      
+console.log(calculator('subtract', 100, 20, 10));          
+console.log(calculator('multiply', 2, 3, 4));              
+console.log(calculator('divide', 100, 5, 2));              
+console.log(calculator('modulus', 10, 3, 2));              
+console.log(calculator('divide', 10, 0));                  
