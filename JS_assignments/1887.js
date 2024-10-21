@@ -24,4 +24,4 @@ const inputObject = {
 const url = "https://localhost:400";
 const result = generateQueryString(inputObject, url);
 
-console.log(result); // Output: https://localhost:400?keyOne=value%20One&keyTwo=value%20Two&keyThree=value%20Three
+console.log(result); // Output: https://localhost:400?keyOne=value One&keyTwo=value Two&keyThree=value Three

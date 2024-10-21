@@ -116,7 +116,7 @@ if(Number.isNaN( numbers[0])){
 }
 
 // Example usage:
-console.log(calculate("3 + 5 * 2"));                 
+console.log(calculate("3 +5 * 2"));                 
 console.log(calculate("10 + 2 * 6"));                
 console.log(calculate("100 * 2 + 12"));               
 console.log(calculate("100 * ( 2 + 12 )"));           
