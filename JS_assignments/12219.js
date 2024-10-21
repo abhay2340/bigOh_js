@@ -16,7 +16,7 @@ function rotateMatrixClockwise(matrix) {
     return matrix;
 }
 
-// Example usage
+
 let matrix = [
     [1, 2, 3],
     [4, 5, 6],

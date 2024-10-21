@@ -33,17 +33,37 @@
 
 //
 
-console.log("first");
+// console.log("first");
 
-(async function () {
-  console.log("waiting for timeout");
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("hello");
-      resolve();  // Resolve the promise after 5 seconds
-    }, 5000);
-  });
+// (async function () {
+//   console.log("waiting for timeout");
+//   await new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log("hello");
+//       resolve();  // Resolve the promise after 5 seconds
+//     }, 5000);
+//   });
   
-  console.log("second"); // This will execute after "hello"
-})();
+//   console.log("second"); // This will execute after "hello"
+// })();
 
+// let promise = new Promise(function(resolve, reject) {
+//   // the function is executed automatically when the promise is constructed
+
+//   // after 1 second signal that the job is done with the result "done"
+//   setTimeout(() => resolve("done"), 1000);
+// })
+
+// promise.then(()=>{
+//   console.log("Work done")
+// })
+
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve("done!"), 1000);
+});
+
+// resolve runs the first function in .then
+promise.then(
+  result => console.log(result), // shows "done!" after 1 second
+  error => console.log(error) // doesn't run
+);

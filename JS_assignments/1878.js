@@ -20,13 +20,15 @@ function convertSourceToResult(source) {
     });
   
     // Convert the batchMap into the desired result format
+
     for (const [batch_id, contacts] of Object.entries(batchMap)) {
+        console.log(batch_id,contacts)
       result.push({ [batch_id]: contacts });
     }
   
     return result;
   }
-  
+
   // Given source data
   const sourceData = [
     { "batch_id": "123", "name": "Tony", "contact": "9872276210" },
@@ -42,5 +44,5 @@ function convertSourceToResult(source) {
   const resultData = convertSourceToResult(sourceData);
   
   // Output the result
-  console.log(JSON.stringify(resultData, null, 2));
+  console.log(JSON.stringify(resultData,null, 2));
   

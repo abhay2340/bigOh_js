@@ -1,4 +1,3 @@
-// sample object
 let myData = {
     company: {
       departments: [
@@ -17,8 +16,9 @@ let myData = {
     },
   };
   
-  // function to perfrom various operationa based on the input
-  function manageCompanyRemove(myData, operation, departmentName, employee) {
+  // function to perfrom various operations based on the input
+  // function to remove employee  based on the input
+  function remove(myData, operation, departmentName, employee) {
     for (key in myData) {
       if (myData[key].hasOwnProperty("departments")) {
         for (let i = 0; i < myData[key].departments.length; i++) {
@@ -34,8 +34,8 @@ let myData = {
       }
     }
   }
-  
-  function manageCompanyAdd(myData, operation, departmentName, employee) {
+   // function to Add employee  based on the input
+  function add(myData, operation, departmentName, employee) {
     for (key in myData) {
       if (myData[key].hasOwnProperty("departments")) {
         for (var i = 0; i < myData[key].departments.length; i++) {
@@ -49,7 +49,9 @@ let myData = {
       }
     }
   }
-  function manageCompanyUpdate(myData, operation, departmentName, employee = {}) {
+
+   // function to update employee  based on the input
+  function update(myData, operation, departmentName, employee = {}) {
     for (key in myData) {
       if (myData[key].hasOwnProperty("departments")) {
         for (let i = 0; i < myData[key].departments.length; i++) {
@@ -66,8 +68,8 @@ let myData = {
       }
     }
   }
-  
-  function manageCompanyFind(myData, operation, departmentName) {
+//    // function to Find employee  based on the input
+  function find(myData, operation, departmentName) {
     for (key in myData) {
       if (myData[key].hasOwnProperty("departments")) {
         for (let i = 0; i < myData[key].departments.length; i++) {
@@ -80,26 +82,53 @@ let myData = {
         }
       }
     }
+  } 
+  
+  
+   // function to Find only one employee  based on the input
+  function FindOne(myData, operation, departmentName,employee) {
+    for (key in myData) {
+      if (myData[key].hasOwnProperty("departments")) {
+        for (let i = 0; i < myData[key].departments.length; i++) {
+          if (myData[key].departments[i].name=== departmentName) {
+            let employees = myData[key].departments[i].employees;
+            for (let j = 0; j < employees.length; j++) {
+                if (employees[j].id === employee.id){
+
+                    console.log(employees[j]);
+                }
+            }
+          }
+        }
+      }
+    }
   }
   
+// fucntion tomanage all the operations of the company
+
   function manageCompany(myData, operation, departmentName, employee) {
     switch (operation) {
       // to remove
       case "remove":
-        manageCompanyRemove(myData, operation, departmentName, employee);
+        remove(myData, operation, departmentName, employee);
         break;
       // to update
       case "update":
-        manageCompanyUpdate(myData, operation, departmentName, employee);
+        update(myData, operation, departmentName, employee);
         break;
       case "find":
         // to find
-        manageCompanyFind(myData, operation, departmentName);
+        find(myData, operation, departmentName);
+  
+        break;
+      case "findOne":
+        // to find
+        FindOne(myData, operation, departmentName,employee);
   
         break;
       // to add
       case "add":
-        manageCompanyAdd(myData, operation, departmentName, employee);
+        add(myData, operation, departmentName, employee);
         break;
     }
   }
@@ -109,5 +138,8 @@ let myData = {
     name: "Carol",
     role: "HRrrr Manager",
   });
-  manageCompany(myData, "find", "HR");
+  manageCompany(myData, "findOne", "HR",{"id":3});
   // console.log(myData);
+  
+
+  

@@ -31,7 +31,7 @@ function deepClone(obj) {
 
 // Example usage
 const originalObject = {
-    name: "John",
+    name: "Abhay",
     age: 30,
     skills: ["JavaScript", "React", "Node.js"],
     address: {

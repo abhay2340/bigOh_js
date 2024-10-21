@@ -108,22 +108,24 @@ function calculate(expression) {
         const a = numbers.pop();
         numbers.push(evaluate(a, b, operator));
     }
-
+if(Number.isNaN( numbers[0])){
+    console.log("this calcualtion could not be done due to some wrong input");
+}
     // Check if we have exactly one result
     return numbers.length === 1 ? numbers[0] : "Invalid expression: incomplete calculation.";
 }
 
 // Example usage:
-console.log(calculate("3 + 5 * 2"));                  // Output: 13
-console.log(calculate("10 + 2 * 6"));                 // Output: 22
-console.log(calculate("100 * 2 + 12"));               // Output: 212
-console.log(calculate("100 * ( 2 + 12 )"));           // Output: 1400
-console.log(calculate("100 * ( 2 + 12 ) / 14"));      // Output: 100
-console.log(calculate("10 / 0"));                      // Output: Error: Division by zero is not allowed.
-console.log(calculate("-3 + 5"));                      // Output: 2
-console.log(calculate("3 + -5"));                      // Output: -2
-console.log(calculate("3 + (5 * -2)"));                // Output: -7
-console.log(calculate("-3 + -5"));                     // Output: -8
-console.log(calculate("3 + 5 * a"));                   // Output: Invalid expression: contains invalid characters.
-console.log(calculate("3 + (5 * 2"));                  // Output: Invalid expression: incomplete calculation.
-console.log(calculate("3 + 5 *"));                     // Output: Invalid expression: incomplete calculation.
+console.log(calculate("3 + 5 * 2"));                 
+console.log(calculate("10 + 2 * 6"));                
+console.log(calculate("100 * 2 + 12"));               
+console.log(calculate("100 * ( 2 + 12 )"));           
+console.log(calculate("100 * ( 2 + 12 ) / 14"));      
+console.log(calculate("10 / 0"));                    
+console.log(calculate("-3 + 5"));                    
+console.log(calculate("3 + -5"));                     
+console.log(calculate("3 + (5 * -2)"));               
+console.log(calculate("-3 + -5"));                    
+console.log(calculate("3 + 5 * a"));                 
+console.log(calculate("3 + (5 * 2"));               
+console.log(calculate("3 + 5 *"));                     
