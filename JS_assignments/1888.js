@@ -41,3 +41,5 @@ console.log(assertObjectsEqual(actual1, expected1, 'detects that two objects are
 var expected2 = { foo: 6, bar: 5 };
 var actual2 = { foo: 5, bar: 6 };
 console.log(assertObjectsEqual(actual2, expected2, 'detects that two objects are equal')); // Output: FAILED Expected {"foo":6,"bar":5}, but got {"foo":5,"bar":6}
+
+// nesting  example

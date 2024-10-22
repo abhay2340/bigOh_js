@@ -128,4 +128,5 @@ console.log(calculate("3 + (5 * -2)"));
 console.log(calculate("-3 + -5"));                    
 console.log(calculate("3 + 5 * a"));                 
 console.log(calculate("3 + (5 * 2"));               
-console.log(calculate("3 + 5 *"));                     
+console.log(calculate("3 + 5 *"));  
+console.log(calculate(2));                   

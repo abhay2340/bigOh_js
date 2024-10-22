@@ -1,41 +1,37 @@
-// function countWays(arr, target) {
-//     const n = arr.length;
+function findCombinations(arr, targetSum, index, currentSum, expression, results) {
+    // Base case: check if we've processed all elements
+    if (index === arr.length) {
+        if (currentSum === targetSum) {
+            results.push(expression); // Store the valid combination
+        }
+        return;
+    }
     
-//     // Calculate the total possible sum range
-//     const totalSum = arr.reduce((sum, num) => sum + Math.abs(num), 0);
-
-//     // Handle edge case where the target is out of the possible sum range
-//     if (Math.abs(target) > totalSum) {
-//         return 0;
-//     }
-
-//     // Initialize a 2D DP array
-//     const dp = Array(n + 1).fill(0).map(() => Array(2 * totalSum + 1).fill(0));
+    // Include the current element with a + sign
+    findCombinations(arr, targetSum, index + 1, currentSum + arr[index], 
+                     expression + (index > 0 ? " + " : "") + arr[index], results);
     
-//     // Base case: one way to get a sum of 0 with 0 elements
-//     dp[0][totalSum] = 1;
+    // Include the current element with a - sign
+    findCombinations(arr, targetSum, index + 1, currentSum - arr[index], 
+                     expression + (index > 0 ? " - " : "") + arr[index], results);
+    
+    // Skip the current element
+    findCombinations(arr, targetSum, index + 1, currentSum, expression, results);
+}
 
-//     // Fill the DP table
-//     for (let i = 1; i <= n; i++) {
-//         for (let j = -totalSum; j <= totalSum; j++) {
-//             const currentIndex = j + totalSum; // Adjust index to be positive
-//             // If we add the current element
-//             if (j - arr[i - 1] >= -totalSum) {
-//                 dp[i][currentIndex] += dp[i - 1][currentIndex - arr[i - 1]];
-//             }
-//             // If we subtract the current element
-//             if (j + arr[i - 1] <= totalSum) {
-//                 dp[i][currentIndex] += dp[i - 1][currentIndex + arr[i - 1]];
-//             }
-//         }
-//     }
+function targetSum(arr, targetSum) {
+    const results = [];
+    
+    // Start the recursive combination search
+    findCombinations(arr, targetSum, 0, 0, "", results);
+    
+    // Output the results
+    console.log("Total number of ways to achieve the target sum: " + results.length);
+    console.log("Valid combinations are:");
+    results.forEach(combo => console.log(combo)); // Print each valid combination
+}
 
-//     // The answer will be the number of ways to achieve the target
-//     return dp[n][target + totalSum];
-// }
-
-// // Example usage
-// const arr = [-1, 9, 8, -3, 4];
-// const targetSum = 5;
-// const result = countWays(arr, targetSum);
-// console.log(result); // Output: 8
+// Example usage
+const arr = [-1, 9, 8, -3, 4];
+const targetSumValue = 5;
+targetSum(arr, targetSumValue);

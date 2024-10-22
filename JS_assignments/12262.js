@@ -88,11 +88,16 @@ let myData = {
    // function to Find only one employee  based on the input
   function FindOne(myData, operation, departmentName,employee) {
     for (key in myData) {
+
       if (myData[key].hasOwnProperty("departments")) {
+
         for (let i = 0; i < myData[key].departments.length; i++) {
-          if (myData[key].departments[i].name=== departmentName) {
+          const depName = myData[key].departments[i].name
+
+          if (depName=== departmentName) {
             let employees = myData[key].departments[i].employees;
             for (let j = 0; j < employees.length; j++) {
+              
                 if (employees[j].id === employee.id){
 
                     console.log(employees[j]);
