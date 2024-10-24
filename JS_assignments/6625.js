@@ -4,7 +4,7 @@ let input2="{{{{}}}}}}}}}}}}"
 
 let validator=(input)=>{
     let count=0;
-    let stack=[];
+    // let stack=[];
      for( char of input){
          if(char=='{'){
               count++;

@@ -82,6 +82,6 @@ const employeesData = {
   }
   
   // Generate the report and log the output
-  const employeeReport = generateEmployeeReport(employees, projects);
+  const employeeReport = generateEmployeeReport(employeesData, projectsData);
   console.log(JSON.stringify(employeeReport, null, 2));
   
