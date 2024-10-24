@@ -126,7 +126,11 @@ const subscription = [
   },
   {
     name: 'M2',
+<<<<<<< Updated upstream
     isSub: false,
+=======
+    isSub: true,
+>>>>>>> Stashed changes
   },
   {
     name: 'M3',
@@ -174,7 +178,11 @@ const subscription = [
           },
           {
             name: 'M5BB',
+<<<<<<< Updated upstream
             isSub: true,
+=======
+            isSub: false,
+>>>>>>> Stashed changes
           },
           {
             name: 'M5BC',

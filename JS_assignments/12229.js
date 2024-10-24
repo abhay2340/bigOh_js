@@ -135,7 +135,10 @@ class MyPromise {
   }
 }
 
+<<<<<<< Updated upstream
 // Example usage
+=======
+>>>>>>> Stashed changes
 const promise = new MyPromise((resolve, reject) => {
   // Asynchronous behavior: resolve the promise after 1 second
   setTimeout(() => {
